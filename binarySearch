@@ -1,0 +1,37 @@
+// Installed npm packages: jquery underscore request express
+// jade shelljs passport http sys lodash async mocha chai sinon
+// sinon-chai moment connect validator restify ejs ws co when
+// helmet wrench brain mustache should backbone forever debug jsdom
+
+var _ = require('underscore');
+var a=[1,2,3,7,9,14];
+var res = findNum(a, 4, 0, a.length - 1)
+console.log(res)
+if(res == 1){
+  console.log('found');
+}  
+else
+{ console.log('Not Found');} 
+
+function findNum(arr,num,first,last){
+
+      if(first > last){
+        console.log('nope')
+        return 0;
+      }
+        
+
+      var mid = Math.floor((first + last)/2);
+
+      if(arr[mid] == num){
+        console.log('yup')
+        return 1;
+      }
+      
+      if(arr[mid]>num){
+        findNum(arr,num,first,mid-1);
+      }
+      else{
+        findNum(arr,num,mid+1,last);
+      }
+}
